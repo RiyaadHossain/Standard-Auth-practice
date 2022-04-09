@@ -1,16 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import './Header.css'
 
 const Header = () => {
-    return (
-        <nav>
-            <Link to={'/'}>Home</Link>
-            <Link to={'/products'}>Products</Link>
-            <Link to={'/cart'}>Cart</Link>
-            <Link to={'/register'}>Register</Link>
-            <Link to={'/login'}>Log In</Link>
-        </nav>
-    );
+  return (
+    <nav className=" h-20 flex items-center justify-center">
+      <NavLink
+        className={({ isActive }) => (isActive ? "active-link" : "link")}
+        to={"/"}
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "active-link" : "link")}
+        to={"/products"}
+      >
+        Products
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "active-link" : "link")}
+        to={"/cart"}
+      >
+        Cart
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "active-link" : "link")}
+        to={"/register"}
+      >
+        Register
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "active-link" : "link")}
+        to={"/login"}
+      >
+        Log In
+      </NavLink>
+    </nav>
+  );
 };
 
 export default Header;
